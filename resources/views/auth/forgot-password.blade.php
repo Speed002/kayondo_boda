@@ -13,7 +13,7 @@
                 @enderror
             </div>
           <div class="mb-3">
-            <button class="btn btn-light slate-light" type="submit">Request password reset</button>
+            <button class="btn btn-light slate-light btn-grey" type="submit">Request password reset</button>
             <p>
                 <a href="{{route('login')}}" class="slate-light small">Go back to Login</a>
             </p>

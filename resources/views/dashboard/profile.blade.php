@@ -25,7 +25,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-light slate-light" type="submit">Update</button>
+                    <button class="btn btn-light slate-light btn-grey" type="submit">Update</button>
                 </div>
             </form>
 
@@ -60,7 +60,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-light slate-light" type="submit">Update password</button>
+                    <button class="btn btn-light slate-light btn-grey" type="submit">Update password</button>
                 </div>
             </form>
         </div>

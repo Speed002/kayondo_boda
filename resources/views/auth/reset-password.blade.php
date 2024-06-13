@@ -23,7 +23,7 @@
             {{-- This extracts the token from url --}}
             <input type="hidden" name="token" value="{{request()->route('token')}}">
             <div class="mb-3">
-                <button class="btn btn-light slate-light" type="submit">Reset password</button>
+                <button class="btn btn-light slate-light btn-grey" type="submit">Reset password</button>
             </div>
             </div>
         </form>

@@ -1,11 +1,16 @@
 <?php
 
-use App\Http\Controllers\authPagesController;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Livewire\Clients\Update\Personal;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\authPagesController;
+use App\Http\Controllers\DashboardController;
+use App\Livewire\Clients\ClientList;
+use App\Livewire\Clients\ClientShow;
+use App\Livewire\Clients\Create\Create;
 
 // auth Pages
 Route::get('/', authPagesController::class);
@@ -19,4 +24,7 @@ Route::get('/dashboard', DashboardController::class)->name('dashboard');
 // auth profile
 Route::get('/profile', ProfileController::class)->name('profile');
 Route::put('/profile-password-update', [ProfileController::class, 'update_password'])->name('update.password');
-// password-reset
+// Livewire Client pages and logic using livewire components
+Route::get('/client/create', Create::class)->name('client.create');
+Route::get('/client/{client}', ClientShow::class)->name('client.show');
+Route::get('/clients', ClientList::class)->name('clients');

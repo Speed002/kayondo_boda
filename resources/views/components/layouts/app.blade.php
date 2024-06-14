@@ -7,6 +7,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>KayondoBodaLoans.ltd</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
   </head>
 <body>
 
@@ -43,12 +44,12 @@
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 slate" href="">
+                <a class="nav-link d-flex align-items-center gap-2 slate" href="{{route('clients')}}">
                   Clients
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 slate" href="">
+              <a class="nav-link d-flex align-items-center gap-2 slate" href="{{route('client.create')}}">
                 Create new client
               </a>
             </li>
@@ -78,6 +79,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         {{$slot}}
     </main>
+    @livewireScripts
   </div>
 </div>
 </body>

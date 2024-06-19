@@ -1,4 +1,10 @@
 <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('clients') }}">Clients</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Personal Information</li>
+            </ol>
+        </nav>
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
@@ -44,6 +50,3 @@
             });
         </script>
 </div>
-
-
-

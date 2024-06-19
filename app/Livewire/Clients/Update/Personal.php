@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Personal extends Component
 {
-    public Client $client;
+    public $client;
 
     protected $listeners = [
         'field-updated' => '$refresh'
@@ -44,7 +44,6 @@ class Personal extends Component
     public function mount(Client $client)
     {
         $this->client = $client;
-
         // Bind model data to component properties
         $this->name = $client->name;
         $this->dob = $client->dob;

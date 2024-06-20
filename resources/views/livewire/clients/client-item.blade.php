@@ -2,7 +2,7 @@
     <span>{{$client->name}}<br>
     <span class="small slate-light">{{$client->motor->registration}}</span></span>
     <div>
-    <button class="btn btn-sm btn-light slate-light">Luganda</button>
-    <button class="btn btn-sm btn-light slate-light">English</button>
+    <a href="{{route('luganda.document')}}" class="btn btn-sm btn-light slate-light">Luganda</a>
+    <a href="{{route('english.document')}}" class="btn btn-sm btn-light slate-light">English</a>
     </div>
 </li>

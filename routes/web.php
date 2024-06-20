@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\authPagesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DocumentDownloadController;
 use App\Livewire\Clients\ClientList;
 use App\Livewire\Clients\ClientShow;
 use App\Livewire\Clients\Create\Create;
@@ -28,3 +29,6 @@ Route::put('/profile-password-update', [ProfileController::class, 'update_passwo
 Route::get('/client/create', Create::class)->name('client.create');
 Route::get('/client/{client}', ClientShow::class)->name('client.show');
 Route::get('/clients', ClientList::class)->name('clients');
+// Document downloads
+Route::get('/generate-english-agreement', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');
+Route::get('/generate-luganda-agreement', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');

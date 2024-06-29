@@ -27,6 +27,14 @@
                 <p>No clients found.</p>
             @endif
         </div>
+<<<<<<< HEAD
+=======
+        <ul class="list-group">
+            @foreach ($clients as $client)
+                <livewire:clients.client-item :client="$client"/>
+            @endforeach
+        </ul> 
+>>>>>>> agreement-download
     </div>
     <div class="col-sm-4">
         ...

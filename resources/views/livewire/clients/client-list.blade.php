@@ -8,7 +8,7 @@
             @foreach ($clients as $client)
                 <livewire:clients.client-item :client="$client"/>
             @endforeach
-        </ul>
+        </ul> 
     </div>
     <div class="col-sm-4">
         ...

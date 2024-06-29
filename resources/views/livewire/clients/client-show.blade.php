@@ -6,7 +6,7 @@
             <livewire:clients.update.motor/>
             <livewire:clients.update.payment/>
             <livewire:clients.update.referee/>
-        </div>
+        </div> 
         <div class="col-sm-4">
             ...
         </div>

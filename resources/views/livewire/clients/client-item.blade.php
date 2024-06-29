@@ -5,4 +5,4 @@
     <a href="{{route('luganda.document', $client)}}" class="btn btn-sm btn-light slate-light">Luganda</a>
     <a href="{{route('english.document', $client)}}" class="btn btn-sm btn-light slate-light">English</a>
     </div>
-</li>
+</li> 

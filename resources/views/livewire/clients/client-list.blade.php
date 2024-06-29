@@ -14,8 +14,8 @@
                                 <span class="small slate-light">{{ $client->motor->registration }}</span>
                             </span>
                             <div>
-                                <button onclick="alert(123)" class="btn btn-sm btn-light slate-light">Luganda</button>
-                                <button onclick="alert(456)" class="btn btn-sm btn-light slate-light">English</button>
+                                <a href="{{route('luganda.document', $client)}}" class="btn btn-sm btn-light slate-light">Luganda</a>
+                                <a href="{{route('english.document', $client)}}" class="btn btn-sm btn-light slate-light">English</a>
                             </div>
                         </li>
                     @endforeach
@@ -27,11 +27,6 @@
                 <p>No clients found.</p>
             @endif
         </div>
-        <ul class="list-group">
-            @foreach ($clients as $client)
-                <livewire:clients.client-item :client="$client"/>
-            @endforeach
-        </ul>
     </div>
     <div class="col-sm-4">
         ...

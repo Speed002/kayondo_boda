@@ -19,7 +19,6 @@ Route::middleware('guest')->group(function () {
     Route::get('/', AuthPagesController::class);
     Route::get('/login', LoginController::class)->name('login');
     Route::get('/register', RegisterController::class)->name('register');
-
     // Auth Logic
     Route::post('/login', [LoginController::class, 'store']);
     Route::post('/register', [RegisterController::class, 'store']);
@@ -29,16 +28,13 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     // Auth Dashboard
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
-
     // Auth Profile
     Route::get('/profile', ProfileController::class)->name('profile');
     Route::put('/profile-password-update', [ProfileController::class, 'update_password'])->name('update.password');
-
     // Livewire Client Pages and Logic
     Route::get('/client/create', Create::class)->name('client.create');
     Route::get('/client/{client}', ClientShow::class)->name('client.show');
     Route::get('/clients', ClientList::class)->name('clients');
-
     // Document downloads
     Route::get('/generate-english-agreement/{client:name}', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');
     Route::get('/generate-luganda-agreement/{client:name}', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');

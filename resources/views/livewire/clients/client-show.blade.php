@@ -1,10 +1,18 @@
 <div>
     <div class="row py-4 mb-3">
         <div class="col-sm-8">
-            <livewire:clients.update.personal :client="$client"/>
-            <livewire:clients.update.motor/>
-            <livewire:clients.update.payment/>
-            <livewire:clients.update.referee/>
+            <div id="personal-info">
+                <livewire:clients.update.personal :client="$client"/>
+            </div>
+            <div id="motor-info" style="display: none;">
+                <livewire:clients.update.motor :client="$client"/>
+            </div>
+            <div id="payment-info" style="display: none;">
+                <livewire:clients.update.payment :client="$client"/>
+            </div>
+            <div id="referee-info" style="display: none;">
+                <livewire:clients.update.referee :client="$client"/>
+            </div>
         </div>
         <div class="col-sm-4">
             <p>{{$client->name}}'s profile</p>

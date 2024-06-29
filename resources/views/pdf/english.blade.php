@@ -136,10 +136,10 @@
 <body>
     <div class="main-content">
         <div class="header">
-            <span>Date</span>
+            <span>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
                 <span id="passport_photo"></span>
-                <span id="client-name">Wasswa Speed</span>
+                <span id="client-name">{{$client->name}}</span>
             </div>
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>
@@ -151,7 +151,7 @@
             <span>Between</span>
             <p class="fw-bold">Kayondo Tonny [Owner]</p>
             <span>And</span>
-            <p class="fw-bold">Wassa spajij [Hirer]</p>
+            <p class="fw-bold">{{$client->name}}</p>
             <p class="fw-bold" style="margin-top: 25px;">This Agreement Consists Of:</p>
         </div>
         <div class="requirements">
@@ -173,7 +173,7 @@
                     <li>Monitoring of the Hirer’s payments</li>
                 </ul>
             </div>
-            <div style="clear: both;"></div> <!-- Clear float -->
+            <div style="clear: both;"></div>
         </div>
         <div class="footer">
             <img src="{{ public_path('images/footer.jpg')}}" alt="footer">
@@ -187,27 +187,27 @@
                 <p>MOTORCYCLE SALE AND HIRE PURCHASE AGREEMENT</p>
             </div>
             <div>
-                <p>This Agreement is made this date of <span class="blue-color"><strong>6th June 2024.</strong></span></p>
+                <p>This Agreement is made this date of <span class="blue-color"><strong>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</strong></span></p>
                 <p><strong>Between</strong></p>
                 <p><strong>KAYONDO TONNY</strong>, Son of Kalwanyi Peter, Resident of kyassenya-Lwengo, Tel. contact: 0704333591/0772333591, Pastor at Lwengo Pentecostal Life Church, NIN Number CM 6803610254 QG (Here in after "the Owner") on the one part.</p>
 
                 <p><strong>And</strong></p>
 
-                <p><span class="blue-color"><strong style="text-transform: uppercase;">Wasswa Speed</strong></span>
+                <p><span class="blue-color"><strong style="text-transform: uppercase;">{{$client->name}}</strong></span>
                 BORN ON
-                <span><strong class="blue-color">16th July 1990</strong></span>
+                <span><strong class="blue-color">{{$client->dob}}</strong></span>
                 SON OF
-                <span class="blue-color"><strong>Father's name </strong></span>
+                <span class="blue-color"><strong>{{$client->father}} </strong></span>
                 and
-                <span class="blue-color"> <strong>Mother</strong></span>.
+                <span class="blue-color"> <strong>{{$client->mother}}</strong></span>.
                 A RESIDENT OF
-                 <span class="blue-color"><strong>residence</strong></span>
+                 <span class="blue-color"><strong>{{$client->residence}}</strong></span>
                 TELEPHONE CONTACT
-                <span class="blue-color"><strong>Contact</strong></span>
+                <span class="blue-color"><strong>{{$client->contact}}</strong></span>
                 WITH AN OCCUPATION OF
-                <span class="blue-color"><strong>Occupation</strong></span>
+                <span class="blue-color"><strong>{{$client->occupation}}</strong></span>
                 AND NIN:
-                <span class="blue-color"><strong>nin_number</strong></span>
+                <span class="blue-color"><strong>{{$client->nin}}</strong></span>
                 (Here in after “the Hirer”) of the other part.</p>
                 <p style="margin-top:10px;"><strong>WHEREAS.</strong></p>
 
@@ -248,47 +248,43 @@
                                 1.1.1. Equipment: The Owner hereby Hires to the Hirer the following equipment:
                             </li>
                             <li>
-                                1.1.2. Equipment type: <strong class="blue-color">Motorbike</strong>
+                                1.1.2. Equipment type: <strong class="blue-color">{{$client->motor->type}}</strong>
                             </li>
                             <li>
-                                1.1.3. Equipment condition: <strong class="blue-color">New</strong>
+                                1.1.3. Equipment condition: <strong class="blue-color">{{$client->motor->condition}}</strong>
                             </li>
                             <li>
-                                1.1.4. Make: <strong class="blue-color">Bajaj</strong>
+                                1.1.4. Make: <strong class="blue-color">{{$client->motor->make}}</strong>
                             </li>
                             <li>
-                                1.1.5. Color: <strong class="blue-color">Red</strong>
+                                1.1.5. Color: <strong class="blue-color">{{$client->motor->color}}</strong>
                             </li>
                             <li>
-                                1.1.6. Registration number: <strong class="blue-color">UFH044K</strong>
+                                1.1.6. Registration number: <strong class="blue-color">{{$client->motor->registration}}</strong>
                             </li>
                             <li>
-                                1.1.7. Engine number: <strong class="blue-color">WERWERWERW</strong>
+                                1.1.7. Engine number: <strong class="blue-color">{{$client->motor->engine}}</strong>
                             </li>
                             <li>
-                                1.1.8. Chassis number: <strong class="blue-color">WERWERWERW</strong>
+                                1.1.8. Chassis number: <strong class="blue-color">{{$client->motor->chasis}}</strong>
                             </li>
                             <li>
-                                1.1.9. Date of registration: <strong class="blue-color">Date</strong>
+                                1.1.9. Date of registration: <strong class="blue-color">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</strong>
                             </li>
                             <li>
-                                1.1.10. 1Registered Owner <strong class="blue-color">Wasswa Speed</strong>
+                                1.1.10. 1Registered Owner <strong class="blue-color">{{$client->motor->registered_names}}</strong>
                             </li>
                         </ol>
                     </li>
                     <li style="margin-bottom:20px;">
-                        1.2. Place of Agreement signing: <strong class="red-color">Kireka</strong>
+                        1.2. Place of Agreement signing: <strong class="red-color">{{$client->payment->agreement_place}}</strong>
                     </li>
                     <li style="margin-bottom:20px;">
-
                             <strong>1.3. PAYMENT</strong>
-                            The hirer has paid Ugx. <span class="red-color">Initial pay</span> as an initial deposit. Additionally, The hirer shall make weekly deposits of Ugx. <span class="red-color">weekly deposit</span> in advance of Sunday of every week for a period of <span class="red-color">23  weeks.</span> A rough period of <span class="red-color">34 months</span>, with effect from <span class="red-color">Date of start</span>. The summation of these amounts shall be selling price of the motor vehicle
-
+                            The hirer has paid Ugx. <span class="red-color">{{$client->payment->initial_deposit}}</span> as an initial deposit. Additionally, The hirer shall make weekly deposits of Ugx. <span class="red-color">{{$client->payment->weekly_deposit}}</span> in advance of Sunday of every week for a period of <span class="red-color">{{$client->payment->total_weeks}} weeks.</span> A rough period of <span class="red-color">{{$client->payment->agreed_months}} months</span>, with effect from <span class="red-color">{{$client->payment->starting_week}}</span>. The summation of these amounts shall be selling price of the motor vehicle
                     </li>
                     <li>
-
                             <strong>1.6. Sales price:</strong> the Hirer has an option to complete the Agreement requirements early thereby claiming Ownership earlier.
-
                     </li>
                 </ul>
             </div>
@@ -299,17 +295,13 @@
                     </li>
                     <ol style="list-style-type: none;">
                         <li style="margin-bottom:20px;">
-
-                                2.1. The Owner has agreed to let, and the Hirer has agreed to take on Hire the Equipment more particularly described in the schedule here on Hire / Purchase arrangement, based on the terms and conditions stipulated herein.
-
+                            2.1. The Owner has agreed to let, and the Hirer has agreed to take on Hire the Equipment more particularly described in the schedule here on Hire / Purchase arrangement, based on the terms and conditions stipulated herein.
                         </li>
                         <li style="margin-bottom:20px;">
                             <strong>3.0. CONSIDERATION</strong>
                         </li>
                         <li>
-
                             3.1. In consideration of the delivery of the equipment to the Hirer, the Hirer has agreed to take the Equipment on Hire Purchase for total consideration of the Hire Purchase payments over the Term and the Hire/ Purchase initial installment parts 1 and 2
-
                         </li>
                     </ol>
                 </ul>
@@ -324,9 +316,7 @@
 
                     <ol style="list-style-type: none;">
                         <li>
-
                                 3.2. By clients submitting and paying for initial installments parts 1 and 2, the Hirer certifies all information is accurate and trustful and as such, if the client does not qualify for the Hire Purchase asset, these funds will be refundable. Initial installment parts 1and 2 will not be refundable if the application information provided are false or misleading in any way.
-
                         </li>
                     </ol>
                 </ul>
@@ -338,44 +328,28 @@
                     </li>
                     <ol style="list-style-type: none;">
                         <li>
-
                                 4.1. The Hirer shall pay the Owner whenever due and without demand, any and all Money due as daily or weekly installments under the term of this Agreement and or which the Owner sees if it should be paid in order to make good any default committed by the Hirer.
-
                         </li>
                         <li>
-
                                 4.2. The Hirer shall make all payments free of charges and duties, and that the payments are at the Hirer’s risk until received at the address appointed for this purpose by the Owner.
-
                         </li>
                         <li class="red-color">
-
                                 4.3. Where the Hirer fails to make Hire Purchase payments for two (2) or more weeks, the Owner reserves the right to repossess the motorcycle and terminate this Agreement.
-
                         </li>
                         <li>
-
                                 4.3.1. The Hirer shall not object to the retaking of possession of the said motorcycle by the Owner or his agents and/or by written notice to the Hirer.
-
                         </li>
                         <li>
-
                                 4.3.2. The Hirer is expected to return the equipment to the Owner, if the Owner must retrieve the Equipment, an impounding Fee is charged.
-
                         </li>
                         <li>
-
                                 4.3.3. Upon repossession of the motorcycle, the Hirer shall be under obligation to fully settle any amounts in arrears of that date.
-
                         </li>
                         <li>
-
                                 4.3.4. Where the Hirer pays at least Eighty percent (80%) of the arrears within fourteen (14) days from the date of repossession of the motorcycle or reaching on any mutual agreement, the Owner may at its full discretion, return the motorcycle to the Hirer, and this Agreement will continue the basis laid out herein.
-
                         </li>
                         <li class="red-color">
-
                             4.3.5. In a situation where the agreed period of loan payment comes to an end the the Hirer has loan balances, he will be fined to pay two times the debt balance. For example, if the balance is Ugx. 200,000, the Hirer shall pay Ugx. 400,000 as fine. Alternatively, the hirer may be required to continue paying weekly deposits until he is set to bring the remaining balance at the end of the agreement at once, these extra weeks serve as fines, not deducting on the debt.
-
                     </li>
                     </ol>
                 </ul>
@@ -592,24 +566,24 @@
                         <img src="{{ public_path('images/user03.jpg') }}" width="100" alt="">
                     </div>
                     <div class="details">
-                        <p>Owner: <strong>Kayondo Tonny</strong></p>
+                        <p>Owner: <strong class="blue-color">Kayondo Tonny</strong></p>
                         <p>Signature: </p>
-                        <p>Date: </p>
+                        <p>Date: <strong class="blue-color">{{$client->doa}}</strong></p>
                     </div>
 
                     <div class="details">
                         <p><strong>REFEREE 1</strong></p>
-                        <p>Name: <strong></strong></p>
-                        <p>Relationship: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>Name: <strong class="blue-color">{{$client->referee->referee1_name}}</strong></p>
+                        <p>Relationship: <strong class="blue-color">{{$client->referee->referee1_relationship}}</strong></p>
+                        <p>Contact: <strong class="blue-color">{{$client->referee->referee1_contact}}</strong></p>
                         <p>Signature: </p>
                     </div>
 
                     <div class="details">
                         <p><strong>REFEREE 3 / STAGE CHAIRPERSON</strong></p>
-                        <p>Name: <strong></strong></p>
-                        <p>Relationship: <strong></strong></p>
-                        <p>Signature: <strong></strong></p>
+                        <p>Name: <strong class="blue-color">{{$client->referee->st_chair_name}}</strong></p>
+                        <p>Contact: <strong class="blue-color">{{$client->referee->st_chair_contact}}</strong></p>
+                        <p>Signature:</p>
                     </div>
                 </div>
                 <div class="right-content">
@@ -617,21 +591,21 @@
                         <img src="{{ public_path('images/user04.jpg') }}" width="100" alt="">
                     </div>
                     <div class="details">
-                        <p>Hirer: <strong></strong></p>
+                        <p>Hirer: <strong class="blue-color">{{$client->name}}</strong></p>
                         <p>Signature:</p>
-                        <p>Date: <strong></strong></p>
+                        <p>Date: <strong class="blue-color">{{$client->doa}}</strong></p>
                     </div>
                     <div class="details">
                         <p><strong>REFEREE 2</strong></p>
-                        <p>Name: <strong></strong></p>
-                        <p>Relationship: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
-                        <p>Signature: <strong></strong></p>
+                        <p>Name: <strong class="blue-color">{{$client->referee->referee2_name}}</strong></p>
+                        <p>Relationship: <strong class="blue-color">{{$client->referee->referee2_relationship}}</strong></p>
+                        <p>Contact: <strong class="blue-color">{{$client->referee->referee2_contact}}</strong></p>
+                        <p>Signature: </p>
                     </div>
                     <div class="details">
                         <p><strong>REGIONAL CHAIRPERSON</strong></p>
-                        <p>Name: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>Name: <strong class="blue-color">{{$client->referee->lc_chair_name}}</strong></p>
+                        <p>Contact: <strong class="blue-color">{{$client->referee->lc_chair_contact}}</strong></p>
                         <p>Signature:<strong></strong></p>
                     </div>
                 </div>

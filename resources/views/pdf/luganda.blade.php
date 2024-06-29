@@ -140,10 +140,10 @@
 <body>
     <div class="main-content">
         <div class="header">
-            <span>Date</span>
+            <span>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
                 <span id="passport_photo"></span>
-                <span id="client-name">Wasswa Speed</span>
+                <span id="client-name">{{$client->name}}</span>
             </div>
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>
@@ -153,9 +153,9 @@
         <div id="introduction_content">
             <p class="fw-bold text-danger">ENDAGAANO</p>
             <span>Wakati wa</span>
-            <p class="fw-bold">Kayondo Tonny [Owner]</p>
-            <span>And</span>
-            <p class="fw-bold">Client [Hirer]</p>
+            <p class="fw-bold">Kayondo Tonny [Nanyini]</p>
+            <span>Ne:</span>
+            <p class="fw-bold">{{$client->name}} [Omuguzi]</p>
             <p class="fw-bold" style="margin-top: 25px;">Ebiri mu ndagaano eno:</p>
         </div>
         <div class="requirements">
@@ -195,26 +195,24 @@
 
                 <p><strong>Ne:</strong></p>
 
-                <p><span class="blue-color"><strong style="text-transform: uppercase;">Wasswa Speed</strong></span>
+                <p><span class="blue-color"><strong style="text-transform: uppercase;">{{$client->name}}</strong></span>
                 BORN ON
-                <span><strong class="blue-color">16th July 1990</strong></span>
+                <span><strong class="blue-color">{{ \Carbon\Carbon::parse($client->dob)->isoFormat('Do MMMM YYYY') }}</strong></span>
                 mutabani w’omwani n’omukyala
-                <span class="blue-color"><strong>Father's name </strong></span>
+                <span class="blue-color"><strong>{{$client->father}} </strong></span>
                 ne:
-                <span class="blue-color"> <strong>Mother</strong></span>.
+                <span class="blue-color"> <strong>{{$client->mother}}</strong></span>.
                 Omutuuze w’e
-                 <span class="blue-color"><strong>residence</strong></span>
+                 <span class="blue-color"><strong>{{$client->residence}}</strong></span>
                 Enamba y’essimu:
-                <span class="blue-color"><strong>Contact</strong></span>
+                <span class="blue-color"><strong>{{$client->contact}}</strong></span>
                 n’omulimo gwe:
-                <span class="blue-color"><strong>Occupation</strong></span>
+                <span class="blue-color"><strong>{{$client->occupation}}</strong></span>
                 NIN:
-                <span class="blue-color"><strong>nin_number</strong></span>
+                <span class="blue-color"><strong>{{$client->nin}}</strong></span>
                 (mundagaano eno ye <strong>“Muguzi”</strong>) kuluda olulala.
                 </p>
-
                 <p><strong>ERA NGA:</strong></p>
-
                 <div style="margin-top:-20px;">
                     <ul style="list-style-type: upper-alpha;">
                         <li>
@@ -252,40 +250,40 @@
                                 1.1.1. Ekitundibwa; Nanyini mumbeera eno aguza Omuguzi ekiduka kino wamanga:
                             </li>
                             <li>
-                                1.1.2. Ekika ky’ekiduka e kitundibwa: <strong class="blue-color">Motorbike</strong>
+                                1.1.2. Ekika ky’ekiduka e kitundibwa: <strong class="blue-color">{{$client->motor->type}}</strong>
                             </li>
                             <li>
-                                1.1.3. Embeera y’ekiduka: <strong class="blue-color">New</strong>
+                                1.1.3. Embeera y’ekiduka: <strong class="blue-color">{{$client->motor->condition}}</strong>
                             </li>
                             <li>
-                                1.1.4. Enkola: <strong class="blue-color">Bajaj</strong>
+                                1.1.4. Enkola: <strong class="blue-color">{{$client->motor->make}}</strong>
                             </li>
                             <li>
-                                1.1.5. Color: <strong class="blue-color">Red</strong>
+                                1.1.5. Color: <strong class="blue-color">{{$client->motor->color}}</strong>
                             </li>
                             <li>
-                                1.1.6. Registration number: <strong class="blue-color">UFH044K</strong>
+                                1.1.6. Registration number: <strong class="blue-color">{{$client->motor->registration}}</strong>
                             </li>
                             <li>
-                                1.1.7. Engine number: <strong class="blue-color">WERWERWERW</strong>
+                                1.1.7. Engine number: <strong class="blue-color">{{$client->motor->engine}}</strong>
                             </li>
                             <li>
-                                1.1.8. Chassis number: <strong class="blue-color">WERWERWERW</strong>
+                                1.1.8. Chassis number: <strong class="blue-color">{{$client->motor->chasis}}</strong>
                             </li>
                             <li>
-                                1.1.9. Date of registration: <strong class="blue-color">Date</strong>
+                                1.1.9. Date of registration: <strong class="blue-color">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</strong>
                             </li>
                             <li>
-                                1.1.10. 1Registered Owner <strong class="blue-color">Wasswa Speed</strong>
+                                1.1.10. 1Registered Owner <strong class="blue-color">{{$client->motor->registered_names}}</strong>
                             </li>
                         </ol>
                     </li>
                     <li style="margin-bottom:20px;">
-                        1.12. Ekifo/ ekituundu endagaano w’essiddwako omukono: <strong class="red-color">Kireka</strong>
+                        1.12. Ekifo/ ekituundu endagaano w’essiddwako omukono: <strong class="red-color">{{$client->payment->agreement_place}}</strong>
                     </li>
                     <li style="margin-bottom:20px;">
                             <strong>1.4. ENSASULA:</strong>
-                            Omuguzi atandise ne Ugx. <span class="red-color">Initial pay</span> nga entadikwa kukusasula ekiduka kino, oluvanyuma lw’okuwebwa ekiduka kino, omuguzi wa kusasula Ugx. <span class="red-color">weekly deposit</span> buli wiiki obutassuka Sunday okumala wiiki <span class="red-color">23  weeks.</span> nga omugate gy’emyezi <span class="red-color">34 months</span>, okutandika nga <span class="red-color">Date of start.</span> era nga guno gwemuwendo gw’ekiduka kino.
+                            Omuguzi atandise ne Ugx. <span class="red-color">{{$client->payment->initial_deposit}}</span> nga entadikwa kukusasula ekiduka kino, oluvanyuma lw’okuwebwa ekiduka kino, omuguzi wa kusasula Ugx. <span class="red-color">{{$client->payment->weekly_deposit}}.</span> buli wiiki obutassuka Sunday okumala wiiki <span class="red-color">{{$client->payment->total_weeks}}. </span> nga omugate gy’emyezi <span class="red-color">{{$client->payment->agreed_months}} </span>, okutandika nga <span class="red-color">{{ \Carbon\Carbon::parse($client->payment->starting_week)->isoFormat('Do MMMM YYYY') }}.</span> era nga guno gwemuwendo gw’ekiduka kino.
                     </li>
                     <li>
                             <strong>1.6. OKUSASULA AMANGU:</strong> Omuguzi ayina eddembe okusasula sente ezisukka ezo ezirambikiddwa buli wiiki okumusobozesa okumalayo ebbanja lye amangu naawebwa obwanannyini ku e kiduka   eno. (Enkola eno ekubirizibwa).
@@ -496,21 +494,21 @@
                     <div class="details">
                         <p>NANYINI: <strong>Kayondo Tonny</strong></p>
                         <p>Signature: </p>
-                        <p>Date: </p>
+                        <p>Date: <span class="blue-color">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span></p>
                     </div>
 
                     <div class="details">
                         <p><strong>EY’EYIMIRIDDE OMUGUZI (1)</strong></p>
-                        <p>ERINNYA: <strong></strong></p>
-                        <p>BW’AMUYITA: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>ERINNYA: <span class="blue-color">{{$client->referee->referee1_name}}</span></p>
+                        <p>BW’AMUYITA: <span class="blue-color">{{$client->referee->referee1_relationship}}</span></p>
+                        <p>Contact: <span class="blue-color">{{$client->referee->referee1_contact}}</span></p>
                         <p>Signature: </p>
                     </div>
 
                     <div class="details">
                         <p><strong>STAGE CHAIRMAN</strong></p>
-                        <p>ERINNYA: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>ERINNYA: <span class="blue-color">{{$client->referee->st_chair_name}}</span></p>
+                        <p>Contact: <span class="blue-color">{{$client->referee->st_chair_contact}}</span></p>
                         <p>Signature: </p>
                     </div>
                 </div>
@@ -519,21 +517,21 @@
                         <img src="{{ public_path('images/user04.jpg') }}" width="100" alt="">
                     </div>
                     <div class="details">
-                        <p>OMUGUZI: <strong></strong></p>
+                        <p>OMUGUZI: <span class="blue-color">{{$client->name}}</span></p>
                         <p>Signature:</p>
-                        <p>Date: <strong></strong></p>
+                        <p>Date: <span class="blue-color">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span></p>
                     </div>
                     <div class="details">
                         <p><strong>EY’EYIMIRIDDE OMUGUZI (2)</strong></p>
-                        <p>ERINNYA: <strong></strong></p>
-                        <p>BW’AMUYITA: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>ERINNYA: <span class="blue-color">{{$client->referee->referee2_name}}</span></p>
+                        <p>BW’AMUYITA: <span class="blue-color">{{$client->referee->referee2_relationship}}</span></p>
+                        <p>Contact: <span class="blue-color">{{$client->referee->referee2_contact}}</span></p>
                         <p>Signature: </p>
                     </div>
                     <div class="details">
                         <p><strong>CHAIRMAN W’OMUGUZI</strong></p>
-                        <p>ERINNYA: <strong></strong></p>
-                        <p>Contact: <strong></strong></p>
+                        <p>ERINNYA: <span class="blue-color">{{$client->referee->lc_chair_name}}</span></p>
+                        <p>Contact: <span class="blue-color">{{$client->referee->lc_chair_contact}}</span></p>
                         <p>Signature:<strong></strong></p>
                     </div>
                 </div>

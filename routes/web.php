@@ -30,5 +30,5 @@ Route::get('/client/create', Create::class)->name('client.create');
 Route::get('/client/{client}', ClientShow::class)->name('client.show');
 Route::get('/clients', ClientList::class)->name('clients');
 // Document downloads
-Route::get('/generate-engl  ish-agreement', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');
-Route::get('/generate-luganda-agreement', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');
+Route::get('/generate-english-agreement/{client:name}', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');
+Route::get('/generate-luganda-agreement/{client:name}', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');

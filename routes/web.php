@@ -38,4 +38,6 @@ Route::middleware('auth')->group(function () {
     // Document downloads
     Route::get('/generate-english-agreement/{client:name}', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');
     Route::get('/generate-luganda-agreement/{client:name}', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');
+    Route::get('/generate-take-over-form/{client:name}', [DocumentDownloadController::class, 'generateTakeOverForm'])->name('take-over.document');
+    Route::get('/generate-online-hirer-form/{client:name}', [DocumentDownloadController::class, 'generateOnlineHirerForm'])->name('online-hirer-form.document');
 });

@@ -7,7 +7,7 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
         }

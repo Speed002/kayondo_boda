@@ -17,10 +17,14 @@
         <div class="col-sm-4">
             <p>{{$client->name}}'s profile</p>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('personal-info')">Personal Info</a>
-                <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('motor-info')">Motor Info</a>
-                <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('payment-info')">Payment Info</a>
-                <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('referee-info')">Referee Info</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('personal-info')">Personal Info</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('motor-info')">Motor Info</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('payment-info')">Payment Info</a>
+                <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('referee-info')">Referee Info</a>
+                <a href="{{route('take-over.document', $client)}}" class="list-group-item list-group-item-action">Take-Over Form</a>
+                <a href="{{route('online-hirer-form.document', $client)}}" class="list-group-item list-group-item-action">Online Hirer Form</a>
+                <a href="{{route('luganda.document', $client)}}" class="list-group-item list-group-item-action">Luganda Agreement</a>
+                <a href="{{route('english.document', $client)}}" class="list-group-item list-group-item-action">English Agreement</a>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
 
     <style>
         body {
-            font-family:'poppins', sans-serif;
+            font-family:'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
         }
@@ -241,7 +241,7 @@
 
         <div class="third-page">
             <div>
-                <p><strong>ENJUUYI Z’OMBI ZITUUSE KUNZIKIRIZIGANYA KUBINO WAMANGA:</strong></p>
+                <p style="margin-top:50px;"><strong>ENJUUYI Z’OMBI ZITUUSE KUNZIKIRIZIGANYA KUBINO WAMANGA:</strong></p>
                 <ul style="list-style-type: none;">
                     <li style="margin-bottom:20px;">
                         <strong>1. EKITUNDIBWA</strong>

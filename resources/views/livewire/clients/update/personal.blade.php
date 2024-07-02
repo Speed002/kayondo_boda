@@ -34,7 +34,7 @@
                             </form>
                         @endif
                     </div>
-                    <button class="btn btn-light btn-sm" wire:click="toggleEditing('{{ $field }}')">edit</button>
+                    <button class="btn btn-light btn-sm" wire:click="toggleEditing('{{ $field }}')">Edit</button>
                 </li>
             @endforeach
         </ol>

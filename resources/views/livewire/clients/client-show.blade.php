@@ -26,10 +26,12 @@
                 <a href="{{route('luganda.document', $client)}}" class="list-group-item list-group-item-action">Luganda Agreement</a>
                 <a href="{{route('english.document', $client)}}" class="list-group-item list-group-item-action">English Agreement</a>
             </div>
+            {{-- File uploader --}}
+            <livewire:clients.uploader :client="$client"/>
+            <livewire:clients.uploaded-files :client="$client"/>
         </div>
     </div>
 </div>
-
 <script>
     function showComponent(componentId) {
         const components = ['personal-info', 'motor-info', 'payment-info', 'referee-info'];

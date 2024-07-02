@@ -29,6 +29,6 @@
         </div>
     </div>
     <div class="col-sm-4">
-        ...
+        <p class="slate">...</p>
     </div>
 </div>

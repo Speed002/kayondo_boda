@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>KayondoBodaLoans.ltd</title>
+    <title>KayondoBodaLoans</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
   </head>

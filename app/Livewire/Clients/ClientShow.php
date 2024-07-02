@@ -4,6 +4,7 @@ namespace App\Livewire\Clients;
 
 use App\Models\Client;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class ClientShow extends Component
 {

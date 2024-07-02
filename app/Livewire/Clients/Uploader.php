@@ -2,19 +2,17 @@
 
 namespace App\Livewire\Clients;
 
-use App\Models\Client;
 use App\Models\File;
+use App\Models\Client;
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class Uploader extends Component
 {
     use WithFileUploads;
-
     public Client $client;
-
     public $files = [];
-
     public function rules(){
         return [
             'files.*' => ['required', 'file', 'max:200000']
@@ -36,8 +34,9 @@ class Uploader extends Component
                 'file_path' => $file->storeAs('files/'.$this->client->name, $name)
             ]);
         });
-        
-        $this->dispatch('refresh');
+        // $this->dispatch('refresh');
+        //this is great
+        return redirect()->route('client.show', $this->client);
     }
 
     public function render()

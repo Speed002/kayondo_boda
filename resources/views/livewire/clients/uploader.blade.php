@@ -1,4 +1,4 @@
-<div class="mt-3" 
+<div class="mt-3"
     x-data="{
     dropping: false,
     progress:0,
@@ -23,6 +23,7 @@
 <div
     x-on:dragover.prevent="dropping = true"
     x-on:dragleave.prevent="dropping = false"
+    x-on:drop="dropping = false"
     x-on:drop.prevent="handleDrop($event)"
 
     x-bind:class="{
@@ -33,7 +34,7 @@
     id="drop-zone" class="mx-auto slate-light">
 
   <label for="file-input">
-    <p>Drag & drop {{$client->name}}'s files here or click to browse</p>
+    <p>Drag & drop user files here or click to browse</p>
     <input type="file" id="file-input" class="d-none" multiple x-on:change="handleDrop">
   </label>
   <a href="#" type="button" class="text-primary mt-2" id="browse-btn" onclick="document.getElementById('file-input').click()">Upload a file</a>

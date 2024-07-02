@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Livewire\Clients;
-
 use App\Models\File;
 use App\Models\Client;
 use Livewire\Component;
@@ -10,11 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class UploadedFiles extends Component
 {
-    public Client $client;
+    protected $listeners = ['refresh' => '$refresh'];
 
-    protected $listeners = [
-        'refresh' => '$refresh'
-    ];
+    public Client $client;
 
     public function getFilesProperty()
     {
@@ -23,10 +20,8 @@ class UploadedFiles extends Component
 
     public function download($id)
     {
-        $file = File::findOrFail($id);
-        return Storage::download($file->file_path);
+        return Storage::download(File::findOrFail($id)->file_path);
     }
-
     public function render()
     {
         return view('livewire.clients.uploaded-files');

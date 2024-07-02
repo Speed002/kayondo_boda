@@ -22,10 +22,12 @@
                 <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('payment-info')">Payment Info</a>
                 <a href="#" class="list-group-item list-group-item-action" onclick="showComponent('referee-info')">Referee Info</a>
             </div>
+            {{-- File uploader --}}
+            <livewire:clients.uploader :client="$client"/>
+            <livewire:clients.uploaded-files :client="$client"/>
         </div>
     </div>
 </div>
-
 <script>
     function showComponent(componentId) {
         const components = ['personal-info', 'motor-info', 'payment-info', 'referee-info'];

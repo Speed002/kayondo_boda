@@ -69,3 +69,25 @@ box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 .navbar .form-control {
 padding: .75rem 1rem;
 }
+/* File uploader styles */
+#drop-zone {
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  #drop-zone label{
+      cursor: pointer;
+  }
+  #drop-zone.dragged {
+    background-color: #f0f0f0;
+  }
+  .drop-zone-border-light{
+    border: 2px dashed #76b6fb;
+  }
+  .drop-zone-border-dark{
+    border: 2px dashed #03448a;
+  }
+  x-cloak{
+    display: none !important;
+  }

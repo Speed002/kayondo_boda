@@ -5,6 +5,7 @@
             @foreach ($this->files as $file)
                 <li class="list-group-item d-flex justify-content-between">
                     <a href="#" wire:click.prevent="download({{ $file->id }})">{{$file->file_name}}</a>
+                    <a href="#" wire:click.prevent="destroy({{ $file->id }})" class="text-danger">remove</a>
                 </li>
             @endforeach
         @else

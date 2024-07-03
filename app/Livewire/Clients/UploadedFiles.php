@@ -22,6 +22,13 @@ class UploadedFiles extends Component
     {
         return Storage::download(File::findOrFail($id)->file_path);
     }
+    public function destroy($id){
+        $file = File::findorfail($id);
+        Storage::delete($file->file_path);
+        $file->delete();
+        return redirect()->route('client.show', $this->client);
+
+    }
     public function render()
     {
         return view('livewire.clients.uploaded-files');

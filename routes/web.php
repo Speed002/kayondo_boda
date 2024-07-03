@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\authPagesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentDownloadController;
+use App\Http\Controllers\RemoveClientController;
 use App\Livewire\Clients\ClientList;
 use App\Livewire\Clients\ClientShow;
 use App\Livewire\Clients\Create\Create;
@@ -40,4 +41,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/generate-luganda-agreement/{client:name}', [DocumentDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');
     Route::get('/generate-take-over-form/{client:name}', [DocumentDownloadController::class, 'generateTakeOverForm'])->name('take-over.document');
     Route::get('/generate-online-hirer-form/{client:name}', [DocumentDownloadController::class, 'generateOnlineHirerForm'])->name('online-hirer-form.document');
+    Route::post('/remove-client/{client}', [RemoveClientController::class, 'destroy'])->name('remove-client');
 });

@@ -36,7 +36,7 @@ class Client extends Model
     public function referee(){
         return $this->hasOne(Referee::class);
     }
-    public function file(){
+    public function files(){
         return $this->hasMany(File::class);
     }
 }

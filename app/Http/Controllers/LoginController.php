@@ -21,7 +21,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($request->only('email','password'), $request->has('remember'))){
+        if(auth()->attempt($request->only('email','password'), true)){
             return redirect()->route('dashboard');
         }else{
             // Authentication failed, redirect back with an error message

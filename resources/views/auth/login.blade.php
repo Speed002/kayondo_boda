@@ -19,10 +19,10 @@
                     <small class="text-danger text-xs">{{$message}}</small>
                 @enderror
             </div>
-            <div>
+            {{-- <div>
                 <input type="checkbox" name="remember" id="remember" value="">
                 <label for="exampleFormControlInput1" class="form-label slate-light">Keep me signed in</label>
-            </div>
+            </div> --}}
           <div class="mb-3">
             <button class="btn btn-light slate-light btn-grey" type="submit">Sign in</button>
             <p>

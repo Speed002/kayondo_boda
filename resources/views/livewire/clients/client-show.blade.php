@@ -36,23 +36,23 @@
         </div>
         <div class="col-sm-4">
             <p>{{$client->name}}'s profile</p>
-            <small>User Information (click to check)</small>
+            <small>Navigation (click to switch)</small>
             <div class="btn-group col-md-12 mb-3" role="group" aria-label="Basic example">
-                <button type="button" style="font-size: 14px !important;" class="btn btn-outline-secondary" onclick="showComponent('personal-info')">Personal</button>
-                <button type="button" style="font-size: 14px !important;" class="btn btn-outline-secondary" onclick="showComponent('motor-info')">Motor</button>
-                <button type="button" style="font-size: 14px !important;" class="btn btn-outline-secondary" onclick="showComponent('payment-info')">Payment</button>
-                <button type="button" style="font-size: 14px !important;" class="btn btn-outline-secondary" onclick="showComponent('referee-info')">Referee</button>
+                <button type="button" style="font-size: 12px !important;" class="btn btn-outline-primary" onclick="showComponent('personal-info')">Personal</button>
+                <button type="button" style="font-size: 12px !important;" class="btn btn-outline-primary" onclick="showComponent('motor-info')">Motor</button>
+                <button type="button" style="font-size: 12px !important;" class="btn btn-outline-primary" onclick="showComponent('payment-info')">Payment</button>
+                <button type="button" style="font-size: 12px !important;" class="btn btn-outline-primary" onclick="showComponent('referee-info')">Referee</button>
             </div>
             <small>Click on file to download</small>
-            <div class="list-group">
+            <div class="">
                 {{-- <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('personal-info')">Personal Info</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('motor-info')">Motor Info</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('payment-info')">Payment Info</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light" onclick="showComponent('referee-info')">Referee Info</a> --}}
-                <a href="{{route('take-over.document', $client)}}" class="list-group-item list-group-item-action">Take-Over Form</a>
-                <a href="{{route('online-hirer-form.document', $client)}}" class="list-group-item list-group-item-action">Online Hirer Form</a>
-                <a href="{{route('luganda.document', $client)}}" class="list-group-item list-group-item-action">Luganda Agreement</a>
-                <a href="{{route('english.document', $client)}}" class="list-group-item list-group-item-action">English Agreement</a>
+                <a href="{{route('take-over.document', $client)}}" class="btn btn-primary btn-sm p-1" style="font-size: 12px; margin:2px;">Take-Over Form</a>
+                <a href="{{route('online-hirer-form.document', $client)}}" class="btn btn-primary btn-sm p-1" style="font-size: 12px; margin:2px;">Online Hirer Form</a>
+                <a href="{{route('luganda.document', $client)}}" class="btn btn-primary btn-sm p-1" style="font-size: 12px; margin:2px;">Luganda Agreement</a>
+                <a href="{{route('english.document', $client)}}" class="btn btn-primary btn-sm p-1" style="font-size: 12px; margin:2px;">English Agreement</a>
             </div>
             {{-- File uploader --}}
             <livewire:clients.uploader :client="$client"/>

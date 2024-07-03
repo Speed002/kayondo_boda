@@ -34,10 +34,10 @@
     id="drop-zone" class="mx-auto slate-light">
 
   <label for="file-input">
-    <p>Drag & drop user files here or click to browse</p>
+    <p style="font-size: 12px;">Drag & drop user files here or click to browse</p>
     <input type="file" id="file-input" class="d-none" multiple x-on:change="handleDrop">
   </label>
-  <a href="#" type="button" class="text-primary mt-2" id="browse-btn" onclick="document.getElementById('file-input').click()">Upload a file</a>
+  <a href="#" type="button" class="text-primary mt-2" style="font-size: 12px; margin:2px;" id="browse-btn" onclick="document.getElementById('file-input').click()">Upload a file</a>
 </div>
 @error('files.*')<span class="text-danger">{{$message}}</span>@enderror
 <div class="progress mt-3" x-show="progress" x-cloak>

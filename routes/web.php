@@ -24,7 +24,7 @@ Route::middleware('guest')->group(function () {
 });
 
 // Authenticated routes (accessible only when authenticated)
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {  
     // Auth Dashboard
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     // Auth Profile

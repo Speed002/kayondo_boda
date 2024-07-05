@@ -130,13 +130,18 @@
             float: right; /* Float right to move right content to the right */
             width: 50%; /* Adjust width as needed */
         }
+        .bg-blue{
+            background-color: #558da9;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
     </style>
 </head>
 <body>
     <div class="main-content">
         <div class="header">
-            <span>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
+            <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
                 <span id="passport_photo"></span>
                 <span id="client-name">{{$client->name}}</span>

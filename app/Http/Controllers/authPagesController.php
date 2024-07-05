@@ -11,7 +11,7 @@ class authPagesController extends Controller
         $this->middleware(['guest']);
     }
     public function __invoke(){
-        return view('auth.login');
+        return view('welcome');
     }
     public function password_reset(){
         return view('auth.forgot-password');

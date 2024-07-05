@@ -134,13 +134,18 @@
             float: right; /* Float right to move right content to the right */
             width: 50%; /* Adjust width as needed */
         }
+        .bg-blue{
+            background-color: #558da9;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
     </style>
 </head>
 <body>
     <div class="main-content">
         <div class="header">
-            <span>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
+            <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
                 <span id="passport_photo"></span>
                 <span id="client-name">{{$client->name}}</span>
@@ -189,7 +194,7 @@
                 <p>MOTORCYCLE SALE AND HIRE PURCHASE AGREEMENT</p>
             </div>
             <div>
-                <p>Endagaano eno ekoleddwa enaku z’omwezi nga: <span class="blue-color"><strong>6th June 2024.</strong></span></p>
+                <p>Endagaano eno ekoleddwa enaku z’omwezi nga: <span class="blue-color"><strong>{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}.</strong></span></p>
                 <p><strong>Wakati wa:</strong></p>
                 <p><strong>KAYONDO TONNY</strong>, mutabani wa Kalwanyi Peter, omutuuze w’eKyassenya-Lwengo, Tel: 0704333591/ 0772333591, Omusumba wa Lwengo Pentecostal Life Church, NIN:  CM6803610254 QG  (mundagaano eno ye <strong>“Nanyini”</strong>) kuludda olumu.</p>
 

@@ -32,7 +32,16 @@
                             <li class="scroll-to-section"><a href="#about">About</a></li>
                             <li class="scroll-to-section"><a href="#chefs">Clients</a></li>
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
-                            <li class="scroll-to-section"><a target="_blank" href="{{ route("login") }}">Login</a></li>
+
+                            <li class="scroll-to-section">
+                                @auth
+                                <a target="_blank" class="text-info" href="{{ route("dashboard") }}">Login</a>
+                                @endauth
+                                @guest
+                                <a target="_blank" href="{{ route("login") }}">Login</a>
+                                @endguest
+
+                            </li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

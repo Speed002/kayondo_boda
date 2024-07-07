@@ -11,11 +11,10 @@ use App\Http\Controllers\RemoveClientController;
 use App\Livewire\Clients\ClientList;
 use App\Livewire\Clients\ClientShow;
 use App\Livewire\Clients\Create\Create;
-
+Route::get('/', AuthPagesController::class);
 // Guest routes (accessible only when not authenticated)
 Route::middleware('guest')->group(function () {
     // Auth Pages
-    Route::get('/', AuthPagesController::class);
     Route::get('/login', LoginController::class)->name('login');
     Route::get('/register', RegisterController::class)->name('register');
     // Auth Logic
@@ -24,7 +23,7 @@ Route::middleware('guest')->group(function () {
 });
 
 // Authenticated routes (accessible only when authenticated)
-Route::middleware('auth')->group(function () {  
+Route::middleware('auth')->group(function () {
     // Auth Dashboard
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     // Auth Profile

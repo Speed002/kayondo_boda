@@ -6,8 +6,9 @@
     <title>Hire Purchase Agreement</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
         body {
-            font-family:'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
         }
@@ -113,7 +114,6 @@
             background-repeat: no-repeat;
             background-size: 50%;
             background-position: center;
-            font-family: 'Poppins', sans-serif;
         }
         /* referee part */
         .referee-part {
@@ -138,7 +138,7 @@
 
     </style>
 </head>
-<body>
+<body style="font-family:'Poppins', sans-serif !important;">
     <div class="main-content">
         <div class="header">
             <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>

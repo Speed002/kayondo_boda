@@ -10,7 +10,7 @@
                     <span class="badge badge-sm text-bg-secondary">12</button>
                   </div>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li onclick="window.location='{{route('clients')}}'" class="list-group-item d-flex justify-content-between align-items-center">
                     <span>Clients <br>
                     <span class="small slate-light">Total number of clients served</span></span>
                   <div>

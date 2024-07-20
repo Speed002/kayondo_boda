@@ -109,8 +109,8 @@ class FinalStep extends StepComponent
             'referee2_contact' => $this->state()->forStep('clients.create.steps.referee-step')['referee2_contact'],
             'st_chair_name' => $this->state()->forStep('clients.create.steps.referee-step')['st_chair_name'],
             'st_chair_contact' => $this->state()->forStep('clients.create.steps.referee-step')['st_chair_contact'],
-            'lc_chair_name' => $this->state()->forStep('clients.create.steps.referee-step')['st_chair_name'],
-            'lc_chair_contact' => $this->state()->forStep('clients.create.steps.referee-step')['st_chair_contact'],
+            'lc_chair_name' => $this->state()->forStep('clients.create.steps.referee-step')['lc_chair_name'],
+            'lc_chair_contact' => $this->state()->forStep('clients.create.steps.referee-step')['lc_chair_contact'],
         ]);
         return redirect()->route('client.create')->with('client-created','Client successfully created');
     }

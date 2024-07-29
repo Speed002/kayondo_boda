@@ -1,10 +1,38 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
  /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Your custom styles can go here */
+::placeholder {
+    color: rgb(172, 171, 171) !important;
+    font-size: 14px;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(172, 171, 171) !important;
+  }
+.bg-transparent{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
 body{
-    font-family: 'Nunito';
+    font-family: "Poppins", sans-serif !important;
+    background-image: linear-gradient(to top, #09203f 0%, #1f3d54 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: rgb(194, 193, 193);
+}
+input{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(239, 238, 238) !important;
+    border: none !important;
+}
+input:focus,
+input:active
+{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(239, 238, 238) !important;
 }
 .small{
     font-size: 12px;
@@ -14,11 +42,12 @@ body{
 }
 .slate
 {
-    color: #64748b;
-    font-weight: bold !important;
+    color: rgb(239, 238, 238) !important;
+    font-weight: 500 !important;
 }
 .slate-light{
-    color: #64748b;
+    color: rgb(194, 193, 193);
+    font-weight: 400;
 }
 a{
     text-decoration: none;
@@ -28,14 +57,24 @@ a{
     width: 1rem;
     height: 1rem;
     vertical-align: -.125em;
-    fill: black;
+    fill: rgb(239, 238, 238);
 }
-
+.list-group-item{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer;
+    border:none !important;
+}
 .list-group-item:hover{
-    background-color: rgb(235, 232, 232);
+    transition: .1s ease-in;
+    background-color: #1d3a52 !important;
     cursor: pointer;
 }
-
+.top-client-nav{
+    display: none;
+}
+.top-form-downloads{
+    display: none;
+}
 @media (min-width: 768px) {
     .sidebar .offcanvas-lg {
         position: -webkit-sticky;
@@ -47,9 +86,38 @@ a{
     }
 }
 
+@media only screen and (max-width: 767px) {
+    /* Your mobile styles here */
+    .offcanvas-md{
+        background-image: linear-gradient(to top, #09203f 0%, #1f3d54 100%);
+        background-repeat: no-repeat;
+    }
+}
+
+/* hiding and showing navs */
+@media (max-width: 1068px) {
+    .top-client-nav{
+        display: block;
+    }
+
+    .side-client-nav{
+        display:none;
+    }
+}
+
+@media (max-width: 868px) {
+    .side-form-downloads{
+        display: none;
+    }
+    .top-form-downloads{
+        display: block;
+    }
+}
+
 .sidebar .nav-link {
-font-size: .875rem;
-font-weight: 500;
+    font-size: .975rem;
+    font-weight: 500;
+    color: rgb(194, 193, 193) !important;
 }
 
 .sidebar .nav-link.active {
@@ -63,7 +131,6 @@ font-size: .75rem;
 .navbar-brand {
 padding-top: .75rem;
 padding-bottom: .75rem;
-box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
 
 .navbar .form-control {
@@ -99,8 +166,19 @@ padding: .75rem 1rem;
     font-size: 12px;
     margin: 2px;
 }
-
 .client_name{
     font-size: 13px;
-    
+}
+.nav-bg{
+    background-color: #1d3a52!important;
+}
+/* Style for the span with class "small" */
+.paginate {
+    font-size: 0.700rem; /* Example size, adjust as needed */
+    color: #333; /* Example color, adjust as needed */
+    border-radius: 5px !important;
+}
+.table th, td{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: #dee2e6 !important;
 }

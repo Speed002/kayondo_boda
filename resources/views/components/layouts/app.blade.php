@@ -17,10 +17,18 @@
     </symbol>
 </svg>
 
-<header class="navbar sticky-top flex-md-nowrap p-0 shadow bg-white">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 slate" href="#">
-    kayondo boda loans
-</a>
+<header class="navbar sticky-top flex-md-nowrap p-1 nav-bg">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+    <span class="slate">kayondo boda loans</span>
+  </a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+    <span class="badge p-1 pe-2 text-light-emphasis bg-warning-subtle rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle me-1" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg><span class="">{{auth()->user()->name}}</span>
+    </span>
+  </a>
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
       <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,26 +40,28 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="sidebar border border-right border-bottom-0 border-top-0 col-md-3 col-lg-2 p-0">
+    <div class="sidebar col-md-3 col-lg-2 p-0">
       <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title slate" id="sidebarMenuLabel">kayondobodaloans</h5>
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+                <span class="slate"># kayondobodaloans</span>
+            </a>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column mb-3">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 slate" aria-current="page" href="{{route('dashboard')}}">
+              <a class="nav-link" aria-current="page" href="{{route('dashboard')}}">
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 slate" href="{{route('clients')}}">
+                <a class="nav-link" href="{{route('clients')}}">
                   Clients
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 slate" href="{{route('client.create')}}">
+              <a class="nav-link" href="{{route('client.create')}}">
                 Create new client
               </a>
             </li>
@@ -60,7 +70,7 @@
           @auth
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 slate" href="{{route('profile')}}">
+                <a class="nav-link" href="{{route('profile')}}">
                     Profile
                 </a>
                 </li>

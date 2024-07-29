@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/profile-password-update', [ProfileController::class, 'update_password'])->name('update.password');
     // Livewire Client Pages and Logic
     Route::get('/client/create', Create::class)->name('client.create');
-    Route::get('/client/{client}', ClientShow::class)->name('client.show');
+    Route::get('/client/{client:name}', ClientShow::class)->name('client.show');
     Route::get('/clients', ClientList::class)->name('clients');
     // Document downloads
     Route::get('/generate-english-agreement/{client:name}', [DocumentDownloadController::class, 'generateEnglishPDF'])->name('english.document');

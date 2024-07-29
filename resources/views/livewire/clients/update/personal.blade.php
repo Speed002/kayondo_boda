@@ -1,12 +1,12 @@
 <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('clients') }}">Clients</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Personal Information</li>
+                <li class="breadcrumb-item"><a href="{{ route('clients') }}" class="slate">Clients</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><span class="slate">Personal Information</span></li>
             </ol>
         </nav>
         @if (session()->has('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-primary small">
                 {{ session('message') }}
             </div>
         @endif
@@ -14,8 +14,8 @@
             @foreach ($editing as $field => $isEditing)
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
-                        <div class="fw-normal">{{ ucfirst(str_replace('_', ' ', $field)) }}</div>
-                        <span class="slate-light">{{$client->$field}}</span>
+                        <div class="fw-normal slate">{{ ucfirst(str_replace('_', ' ', $field)) }}</div>
+                        <span class="slate-light small">{{$client->$field}}</span>
                         @if ($isEditing)
                             <form wire:submit.prevent="update('{{ $field }}')" class="row g-3">
                                 <div class="col-auto">

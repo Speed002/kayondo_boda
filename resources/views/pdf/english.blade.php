@@ -13,7 +13,11 @@
             padding: 0;
         }
         p{
-            font-size: 15px;
+            font-size: 14px !important;
+        }
+        #second-page ul li p,
+        #second-page div p{
+            font-size: 16px !important;
         }
         .main-content {
             padding: 10mm; /* Padding for A4-like appearance */
@@ -131,9 +135,8 @@
             width: 50%; /* Adjust width as needed */
         }
         .bg-blue{
-            background-color: #558da9;
+            background-color: #9ed0ea;
             padding: 5px;
-            border-radius: 5px;
         }
 
     </style>
@@ -154,9 +157,9 @@
         <div id="introduction_content">
             <p class="fw-bold text-danger">HIRE PURCHASE AGREEMENT</p>
             <span>Between</span>
-            <p class="fw-bold">Kayondo Tonny [Owner]</p>
+            <p class="fw-bold"><strong>Kayondo Tonny [Owner]</strong></p>
             <span>And</span>
-            <p class="fw-bold">{{$client->name}}</p>
+            <p class="fw-bold"><strong>{{$client->name}}</strong></p>
             <p class="fw-bold" style="margin-top: 25px;">This Agreement Consists Of:</p>
         </div>
         <div class="requirements">
@@ -238,7 +241,7 @@
                 </div>
             </div>
             <div class="footer">
-                <img src="{{ public_path('images/logo_big.jpg')}}" style="width: 10%; margin-top:50px;" alt="footer">
+                <img src="{{ public_path('images/logo_big.jpg')}}" style="width: 10%;" alt="footer">
             </div>
         </div>
 

@@ -1,6 +1,23 @@
 <div class="container">
     <div class="row py-4 mb-3">
         <div class="col-md-8 col-sm-12">
+            <div class="top-client-nav">
+                <p class="slate">{{$client->name}}'s profile</p>
+                <small>Navigation (click to switch)</small>
+                <div class="btn-group col-12 mb-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" onclick="showComponent('personal-info')">Personal</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="showComponent('motor-info')">Motor</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="showComponent('payment-info')">Payment</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="showComponent('referee-info')">Referee</button>
+                </div>
+            </div>
+            <div class="top-form-downloads">
+                <small>Click on file to download</small><br>
+                <a href="{{route('take-over.document', $client)}}" class="btn btn-primary btn-sm p-1">Take-Over Form</a>
+                <a href="{{route('online-hirer-form.document', $client)}}" class="btn btn-primary btn-sm p-1">Online Hirer Form</a>
+                <a href="{{route('luganda.document', $client)}}" class="btn btn-primary btn-sm p-1">Luganda Agreement</a>
+                <a href="{{route('english.document', $client)}}" class="btn btn-primary btn-sm p-1">English Agreement</a>
+            </div>
             <div id="personal-info">
                 <livewire:clients.update.personal :client="$client"/>
             </div>
@@ -17,16 +34,16 @@
             <div class="accordion accordion-flush mt-3 bg-secondary" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed bg-warning text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <button class="accordion-button collapsed bg-warning text-white small" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             Click to remove client
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body bg-transparent small">
                             You are about to remove {{$client->name}} and all the data... please confirm decision by
                             <form action="{{route('remove-client', $client)}}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm">clicking here</button>
+                                <button type="submit" class="btn btn-danger small mt-2">delete here</button>
                             </form>
                             .
                         </div>
@@ -35,18 +52,20 @@
             </div>
         </div>
         <div class="col-md-4 col-sm-12 mt-3 mt-md-0">
-            <p>{{$client->name}}'s profile</p>
+            <span class="side-client-nav">
+            <p class="slate">{{$client->name}}'s profile</p>
             <small>Navigation (click to switch)</small>
-            <br>
-            <div class="btn-group col-12 mb-3" role="group" aria-label="Basic example">
+            </span>
+            <div class="btn-group col-12 mb-3 side-client-nav" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-outline-primary" onclick="showComponent('personal-info')">Personal</button>
                 <button type="button" class="btn btn-outline-primary" onclick="showComponent('motor-info')">Motor</button>
                 <button type="button" class="btn btn-outline-primary" onclick="showComponent('payment-info')">Payment</button>
                 <button type="button" class="btn btn-outline-primary" onclick="showComponent('referee-info')">Referee</button>
             </div>
             <br>
-            <small>Click on file to download</small>
-            <div class="">
+            <div class="side-form-downloads">
+                <small>Click on file to download</small>
+                <br>
                 <a href="{{route('take-over.document', $client)}}" class="btn btn-primary btn-sm p-1">Take-Over Form</a>
                 <a href="{{route('online-hirer-form.document', $client)}}" class="btn btn-primary btn-sm p-1">Online Hirer Form</a>
                 <a href="{{route('luganda.document', $client)}}" class="btn btn-primary btn-sm p-1">Luganda Agreement</a>

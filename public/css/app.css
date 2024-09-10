@@ -1,0 +1,201 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: "Poppins", sans-serif !important;
+    background-image: linear-gradient(to top, #09203f 0%, #1f3d54 100%) !important;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: rgb(194, 193, 193);
+}
+/* side navigation for client-show */
+.side-navigation span{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(194, 193, 193) !important;
+    cursor: pointer;
+}
+
+.side-navigation span:hover{
+    transition: .2s ease-in;
+    background-color: #1d3a52 !important;
+}
+
+input{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(239, 238, 238) !important;
+    border: none !important;
+}
+input:focus,
+input:active
+{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(239, 238, 238) !important;
+}
+.small{
+    font-size: 12px;
+}
+.btn-grey{
+    background-color: #dee2e6 !important;
+}
+.slate
+{
+    color: rgb(239, 238, 238) !important;
+    font-weight: 500 !important;
+}
+.slate-light{
+    color: rgb(194, 193, 193);
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+.bi {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -.125em;
+    fill: rgb(239, 238, 238);
+}
+.list-group-item{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer;
+    border:none !important;
+}
+.list-group-item:hover{
+    transition: .1s ease-in;
+    background-color: #1d3a52 !important;
+    cursor: pointer;
+}
+.top-client-nav{
+    display: none;
+}
+.top-form-downloads{
+    display: none;
+}
+.card{
+    background-color: #254660!important;
+}
+.rm-modal{
+    background-color: #254660!important;
+}
+.card:hover{
+    cursor: pointer !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    transition: .1s ease-in !important;
+}
+
+.sidebar .nav-link {
+    font-size: .875rem;
+    font-weight: 500;
+    color: rgb(194, 193, 193) !important;
+}
+.sidebar .nav-link:hover{
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+.sidebar .nav-link.active {
+color: #2470dc;
+}
+.sidebar-heading {
+font-size: .75rem;
+}
+.navbar-brand {
+padding-top: .65rem;
+padding-bottom: .65rem;
+}
+.navbar .form-control {
+padding: .75rem 1rem;
+}
+/* File uploader styles */
+#drop-zone {
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  #drop-zone label{
+      cursor: pointer;
+  }
+  #drop-zone.dragged {
+    background-color: #f0f0f0;
+  }
+  .drop-zone-border-light{
+    border: 2px dashed #76b6fb;
+  }
+  .drop-zone-border-dark{
+    border: 2px dashed #03448a;
+  }
+  x-cloak{
+    display: none !important;
+  }
+  .btn-group .btn {
+    font-size: 12px !important;
+}
+.btn-primary.btn-sm {
+    font-size: 12px;
+    margin: 2px;
+}
+.client_name{
+    font-size: 13px;
+}
+.nav-bg{
+    /* background-color: #203b51!important; */
+    background-color: #254660!important;
+}
+.paginate {
+    font-size: 0.700rem; /* Example size, adjust as needed */
+    color: #333; /* Example color, adjust as needed */
+    border-radius: 5px !important;
+}
+.table th, td{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: #dee2e6 !important;
+}
+/* Your custom styles can go here */
+::placeholder {
+    color: rgb(172, 171, 171) !important;
+    font-size: 12px;
+    opacity: 1; /* Firefox */
+  }
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(172, 171, 171) !important;
+  }
+.bg-transparent{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+@media (min-width: 768px) {
+    .sidebar .offcanvas-lg {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 48px;
+    }
+    .navbar-search {
+        display: block;
+    }
+}
+@media only screen and (max-width: 767px) {
+    /* Your mobile styles here */
+    .offcanvas-md{
+        background-image: linear-gradient(to top, #09203f 0%, #1f3d54 100%);
+        background-repeat: no-repeat;
+    }
+    .navbar-profile{
+        display: none !important;
+    }
+}
+/* hiding and showing navs */
+@media (max-width: 1068px) {
+    .top-client-nav{
+        display: block;
+    }
+    .side-client-nav{
+        display:none;
+    }
+}
+@media (max-width: 868px) {
+    .side-form-downloads{
+        display: none;
+    }
+    .top-form-downloads{
+        display: block;
+    }
+}
+

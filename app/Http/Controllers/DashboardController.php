@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,6 +13,7 @@ class DashboardController extends Controller
     }
     public function __invoke()
     {
-        return view('dashboard.index');
+        $client_count = Client::all()->count();
+        return view('dashboard.index', ['client_count' => $client_count]);
     }
 }

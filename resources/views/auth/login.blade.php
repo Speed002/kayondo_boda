@@ -12,7 +12,7 @@
                     <small class="text-danger text-xs">{{$message}}</small>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="mb-3 good">
                 <label for="exampleFormControlInput1" class="form-label slate-light">Password</label>
                 <input type="password" class="form-control" name="password" id="password" >
                 @error('password')
@@ -24,7 +24,7 @@
                 <label for="exampleFormControlInput1" class="form-label slate-light">Keep me signed in</label>
             </div> --}}
           <div class="mb-3">
-            <button class="btn btn-light slate-light btn-grey" type="submit">Sign in</button>
+            <button class="btn btn-light small" type="submit">Sign in</button>
             <p>
                 <a href="{{route('password.request')}}" class="small slate-light">Forgot password?</a>
             </p>

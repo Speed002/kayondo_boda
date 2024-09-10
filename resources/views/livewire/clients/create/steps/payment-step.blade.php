@@ -62,10 +62,10 @@
             </div>
             <div class="d-flex justify-content-between">
                 <div class="mb-3">
-                    <button wire:click="previousStep" class="btn btn-light slate-light" type="button">Previous</button>
+                    <button wire:click="previousStep" class="btn btn-light small" type="button">Previous</button>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-dark" type="submit">
+                    <button class="btn btn-light small" type="submit">
                         <span wire:loading.delay.long>
                             Loading ...
                         </span>

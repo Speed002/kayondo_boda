@@ -13,8 +13,13 @@
             padding: 0;
         }
         p{
-            font-size: 15px;
+            font-size: 14px !important;
         }
+        #second-page ul li p,
+        #second-page div p{
+            font-size: 16px !important;
+        }
+
         .main-content {
             padding: 10mm; /* Padding for A4-like appearance */
             /* margin: auto; Center the content horizontally */
@@ -136,7 +141,7 @@
             width: 50%; /* Adjust width as needed */
         }
         .bg-blue{
-            background-color: #558da9;
+            background-color: #9ed0ea;
             padding: 5px;
             border-radius: 5px;
         }
@@ -148,8 +153,8 @@
         <div class="header">
             <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
-                <span id="passport_photo"></span>
-                <span id="client-name">{{$client->name}}</span>
+                <p id="passport_photo"></p>
+                <p style="font-size: 12px !important;" class="px-3">{{$client->name}}</p>
             </div>
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>
@@ -159,9 +164,9 @@
         <div id="introduction_content">
             <p class="fw-bold text-danger">ENDAGAANO</p>
             <span>Wakati wa</span>
-            <p class="fw-bold">Kayondo Tonny [Nanyini]</p>
+            <p class="fw-bold"><strong>Kayondo Tonny [Nanyini]</strong></p>
             <span>Ne:</span>
-            <p class="fw-bold">{{$client->name}} [Omuguzi]</p>
+            <p class="fw-bold"><strong>{{$client->name}} [Omuguzi]</strong></p>
             <p class="fw-bold" style="margin-top: 25px;">Ebiri mu ndagaano eno:</p>
         </div>
         <div class="requirements">
@@ -202,7 +207,7 @@
                 <p><strong>Ne:</strong></p>
 
                 <p><span class="blue-color"><strong style="text-transform: uppercase;">{{$client->name}}</strong></span>
-                BORN ON
+                yazalibwa nga
                 <span><strong class="blue-color">{{ \Carbon\Carbon::parse($client->dob)->isoFormat('Do MMMM YYYY') }}</strong></span>
                 mutabani w’omwani n’omukyala
                 <span class="blue-color"><strong>{{$client->father}} </strong></span>
@@ -241,7 +246,7 @@
                 </div>
             </div>
             <div class="footer">
-                <img src="{{ public_path('images/logo_big.jpg')}}" style="width: 10%; margin-top:100px;" alt="footer">
+                <img src="{{ public_path('images/logo_big.jpg')}}" style="width: 10%; margin-top:50px;" alt="footer">
             </div>
         </div>
 

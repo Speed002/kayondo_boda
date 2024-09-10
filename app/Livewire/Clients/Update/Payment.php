@@ -12,7 +12,6 @@ class Payment extends Component
     protected $listeners = [
         'field-updated' => '$refresh'
     ];
-
     public $initial_deposit;
     public $weekly_deposit;
     public $agreed_months;
@@ -20,7 +19,6 @@ class Payment extends Component
     public $selling_price;
     public $starting_week;
     public $agreement_place;
-
     // For toggling the update forms
     public $editing = [
         'initial_deposit' => false,
@@ -31,11 +29,9 @@ class Payment extends Component
         'starting_week' => false,
         'agreement_place' => false
     ];
-
     public function mount(Client $client)
     {
         $this->client = $client;
-
         // Bind model data to component properties
         $this->initial_deposit = $client->payment->initial_deposit ?? '';
         $this->weekly_deposit = $client->payment->weekly_deposit ?? '';
@@ -45,29 +41,25 @@ class Payment extends Component
         $this->starting_week = $client->payment->starting_week ?? '';
         $this->agreement_place = $client->payment->agreement_place ?? '';
     }
-
     public function toggleEditing($field)
     {
         $this->editing[$field] = !$this->editing[$field];
     }
-
     public function update($field)
     {
         $this->validate([
             $field => 'required|string|max:255',
         ]);
-
         if ($this->client->payment) {
             $this->client->payment->$field = $this->$field;
             $this->client->payment->save();
         }
-
         $this->toggleEditing($field);
-        session()->flash('message', ucfirst(str_replace('_', ' ', $field)) . ' updated successfully.');
+        session()->flash('payment_message', ucfirst(str_replace('_', ' ', $field)) . ' updated successfully.');
         // Dispatch an event to trigger JavaScript code
-        $this->dispatch('field-updated', ['field' => $field]);
+        // $this->dispatch('field-updated', ['field' => $field]);
+        return redirect()->route('client.show', $this->client);
     }
-
     public function render()
     {
         return view('livewire.clients.update.payment');

@@ -74,11 +74,11 @@ class Personal extends Component
         $this->client->save();
 
         $this->toggleEditing($field);
-        session()->flash('message', ucfirst($field) . ' updated successfully.');
+        session()->flash('personal_message', ucfirst($field) . ' updated successfully.');
         // Dispatch an event to trigger JavaScript code
-        $this->dispatch('field-updated', ['field' => $field]);
+        // $this->dispatch('field-updated', ['field' => $field]);
+        return redirect()->route('client.show', $this->client);
     }
-
     public function render()
     {
         return view('livewire.clients.update.personal');

@@ -9,7 +9,7 @@
                 </li>
             @endforeach
         @else
-        <li class="list-group-item">No files uploaded</li>
+        <li class="list-group-item slate-light small">No files uploaded</li>
         @endif
     </ul>
 </div>

@@ -3,7 +3,7 @@
         <p class="slate">Creating New client</p>
         <p class="slate-light">Review and save the client</p>
         <form wire:submit.prevent='submit'>
-            <div class="mb-3 row g-3">
+            <div class="m-3 row g-3">
                 <table class="table table-bordered">
                     <tr>
                         <th colspan='2'>Personal info</th>
@@ -169,10 +169,10 @@
             </div>
             <div class="d-flex justify-content-between">
                 <div class="mb-3">
-                    <button wire:click="previousStep" class="btn btn-light slate-light" type="button">Previous</button>
+                    <button wire:click="previousStep" class="btn btn-light small" type="button">Previous</button>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-dark" type="submit">
+                    <button class="btn btn-light small" type="submit">
                         <span wire:loading.delay.long>
                             Loading ...
                         </span>

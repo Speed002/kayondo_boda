@@ -10,13 +10,16 @@
             <div id="personal-info">
                 <livewire:clients.update.personal :client="$client"/>
             </div>
-            <div id="motor-info" style="display: none;">
+
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                 <livewire:clients.update.motor :client="$client"/>
             </div>
-            <div id="payment-info" style="display: none;">
+
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                 <livewire:clients.update.payment :client="$client"/>
             </div>
-            <div id="referee-info" style="display: none;">
+
+            <div class="tab-pane fade" id="referees-contact" role="tabpanel" aria-labelledby="pills-referee-tab" tabindex="0">
                 <livewire:clients.update.referee :client="$client"/>
             </div>
 
@@ -132,11 +135,3 @@
         </div>
     </div>
 </div>
-<script>
-    function showComponent(componentId) {
-        const components = ['personal-info', 'motor-info', 'payment-info', 'referee-info'];
-        components.forEach(id => {
-            document.getElementById(id).style.display = (id === componentId) ? 'block' : 'none';
-        });
-    }
-</script>

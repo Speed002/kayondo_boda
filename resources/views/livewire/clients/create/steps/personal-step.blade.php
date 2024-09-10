@@ -1,10 +1,10 @@
 <div class="row py-4 mb-3">
     <div class="col-sm-8">
         @if (session('status'))
-        <p class="text-success">Successfully created new client.</p>
-    @endif
-    <p class="slate">Creating New client</p>
-    <p class="slate-light">Personal information</p>
+            <p class="text-success">Successfully created new client.</p>
+        @endif
+        <p class="slate">Creating New client</p>
+        <p class="slate-light">Personal information</p>
         <form wire:submit.prevent='submit'>
             <div class="mb-3 row g-3">
             <div class="col-md-4 ">
@@ -109,7 +109,7 @@
             </div>
 
             <div class="mb-3">
-                <button class="btn btn-dark" type="submit">
+                <button class="btn btn-light small" type="submit">
                     <span wire:loading.delay.long>
                         Loading ...
                     </span>
@@ -121,7 +121,7 @@
         </form>
     </div>
     <div class="col-sm-4">
-        ...
+        
     </div>
 
 </div>

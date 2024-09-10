@@ -11,6 +11,8 @@
                     <div class="ms-2 me-auto">
                         <div class="fw-normal slate">{{ ucfirst(str_replace('_', ' ', $field)) }}</div>
                         <span class="slate-light small">{{ $client->payment->$field }}</span>
+                        <div class="fw-normal slate">{{ ucfirst(str_replace('_', ' ', $field)) }}</div>
+                        <span class="slate-light small">{{ $client->payment->$field }}</span>
                         @if ($isEditing)
                             <form wire:submit.prevent="update('{{ $field }}')" class="row g-3">
                                 <div class="col-auto">
@@ -21,10 +23,10 @@
                                     @endif
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-sm mb-3 text-primary">Update</button>
+                                    <button type="submit" class="btn btn-sm mb-3 text-primary small">Update</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" wire:click="toggleEditing('{{ $field }}')" class="btn btn-sm mb-3 text-secondary">Cancel</button>
+                                    <button type="button" wire:click="toggleEditing('{{ $field }}')" class="btn btn-sm mb-3 text-secondary small">Cancel</button>
                                 </div>
                             </form>
                         @endif

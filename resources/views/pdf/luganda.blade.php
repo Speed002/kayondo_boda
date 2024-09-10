@@ -143,6 +143,7 @@
         .bg-blue{
             background-color: #9ed0ea;
             padding: 5px;
+            border-radius: 5px;
         }
 
     </style>
@@ -152,8 +153,8 @@
         <div class="header">
             <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
             <div class="right-content">
-                <span id="passport_photo"></span>
-                <span id="client-name">{{$client->name}}</span>
+                <p id="passport_photo"></p>
+                <p style="font-size: 12px !important;" class="px-3">{{$client->name}}</p>
             </div>
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>

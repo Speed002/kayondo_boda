@@ -1,13 +1,8 @@
 <div>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('clients') }}" class="slate">Clients</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><span class="slate">Referee Information</span></li>
-        </ol>
-    </nav>
-    @if (session()->has('message'))
-        <div class="alert alert-primary small">
-            {{ session('message') }}
+    @if (session()->has('referee_message'))
+        <div class="alert alert-primary alert-dismissible fade show small" role="alert">
+            <small>{{ session('referee_message') }}.</small>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
     @if ($client->referee)
@@ -23,15 +18,15 @@
                                     <input type="text" class="form-control" wire:model.defer="{{ $field }}">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-sm mb-3 text-primary">Update</button>
+                                    <button type="submit" class="btn btn-sm mb-3 text-primary small">Update</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" wire:click="toggleEditing('{{ $field }}')" class="btn btn-sm mb-3 text-secondary">Cancel</button>
+                                    <button type="button" wire:click="toggleEditing('{{ $field }}')" class="btn btn-sm mb-3 text-secondary small">Cancel</button>
                                 </div>
                             </form>
                         @endif
                     </div>
-                    <button class="btn btn-light btn-sm" wire:click="toggleEditing('{{ $field }}')">Edit</button>
+                    <button class="btn btn-light btn-sm small" wire:click="toggleEditing('{{ $field }}')">Edit</button>
                 </li>
             @endforeach
         </ol>

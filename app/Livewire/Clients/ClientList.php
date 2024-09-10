@@ -20,7 +20,7 @@ class ClientList extends Component
                 $query->where('name', 'LIKE', '%' . $this->query . '%')
                       ->orWhere('contact', 'LIKE', '%' . $this->query . '%');
             })
-            ->simplePaginate(5);
+            ->get(['id', 'name', 'contact']);
         return view('livewire.clients.client-list', [
             'clients' => $clients
         ]);

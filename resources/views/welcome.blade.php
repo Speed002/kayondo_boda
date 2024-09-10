@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/templatemo-klassy-cafe.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl-carousel.css')}}">
     <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
-    <link rel="shortcut icon" href="{{ asset('images/logo3.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo6.png') }}" type="image/x-icon">
     </head>
     <body>
     <header class="header-area header-sticky" style="background: #06315c;">
@@ -35,10 +35,10 @@
 
                             <li class="scroll-to-section">
                                 @auth
-                                <a target="_blank" class="text-info" href="{{ route("dashboard") }}">Login</a>
+                                <a class="text-info" href="{{ route("dashboard") }}">Login</a>
                                 @endauth
                                 @guest
-                                <a target="_blank" href="{{ route("login") }}">Login</a>
+                                <a href="{{ route("login") }}">Login</a>
                                 @endguest
 
                             </li>

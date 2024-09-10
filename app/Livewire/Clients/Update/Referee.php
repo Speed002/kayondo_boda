@@ -74,9 +74,10 @@ class Referee extends Component
         }
 
         $this->toggleEditing($field);
-        session()->flash('message', ucfirst(str_replace('_', ' ', $field)) . ' updated successfully.');
+        session()->flash('referee_message', ucfirst(str_replace('_', ' ', $field)) . ' updated successfully.');
         // Dispatch an event to trigger JavaScript code
-        $this->dispatch('field-updated', ['field' => $field]);
+        // $this->dispatch('field-updated', ['field' => $field]);
+        return redirect()->route('client.show', $this->client);
     }
 
     public function render()

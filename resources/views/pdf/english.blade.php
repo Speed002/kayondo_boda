@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hire Purchase Agreement</title>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -42,9 +41,9 @@
             display: inline-block;
             margin-bottom: 5px;
         }
-        #client-name{
+        /* #client-name{
             margin-top: 170px;
-        }
+        } */
         #main_logo img {
             width: 100%; /* Make the logo responsive */
             max-width: 500px; /* Limit maximum width */
@@ -124,12 +123,10 @@
             clear: both; /* Clear any floats */
             margin-left:50px;
         }
-
         .referee-part .left-content {
             float: left; /* Float left to move left content to the left */
             width: 50%; /* Adjust width as needed */
         }
-
         .referee-part .right-content {
             float: right; /* Float right to move right content to the right */
             width: 50%; /* Adjust width as needed */
@@ -137,17 +134,17 @@
         .bg-blue{
             background-color: #9ed0ea;
             padding: 5px;
+            border-radius: 5px;
         }
-
     </style>
 </head>
 <body style="font-family:'Poppins', sans-serif !important;">
     <div class="main-content">
         <div class="header">
             <span class="bg-blue">{{ \Carbon\Carbon::parse($client->doa)->isoFormat('Do MMMM YYYY') }}</span>
-            <div class="right-content">
-                <span id="passport_photo"></span>
-                <span id="client-name">{{$client->name}}</span>
+            <div class="right-content text-center">
+                <p id="passport_photo"></p>
+                <p style="font-size: 12px !important;" class="px-3">{{$client->name}}</p>
             </div>
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>

@@ -7,6 +7,18 @@ body{
     min-height: 100vh;
     color: rgb(194, 193, 193);
 }
+/* side navigation for client-show */
+.side-navigation span{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: rgb(194, 193, 193) !important;
+    cursor: pointer;
+}
+
+.side-navigation span:hover{
+    transition: .2s ease-in;
+    background-color: #1d3a52 !important;
+}
+
 input{
     background-color: rgba(0, 0, 0, 0.3) !important;
     color: rgb(239, 238, 238) !important;
@@ -60,6 +72,9 @@ a{
     display: none;
 }
 .card{
+    background-color: #254660!important;
+}
+.rm-modal{
     background-color: #254660!important;
 }
 .card:hover{

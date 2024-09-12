@@ -1,6 +1,6 @@
 <div class="container">
-    <nav aria-label="breadcrumb" class="mt-4">
-        <ol class="breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small">
             <li class="breadcrumb-item"><a href="{{route('clients')}}" class="slate">Clients</a></li>
             <li class="breadcrumb-item active" aria-current="page"><span class="slate">{{$client->name}}</span></li>
         </ol>

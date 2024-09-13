@@ -35,10 +35,10 @@
 
                             <li class="scroll-to-section">
                                 @auth
-                                <a target="_blank" class="text-info" href="{{ route("dashboard") }}">Login</a>
+                                <a class="text-info" href="{{ route("dashboard") }}">Login</a>
                                 @endauth
                                 @guest
-                                <a target="_blank" href="{{ route("login") }}">Login</a>
+                                <a href="{{ route("login") }}">Login</a>
                                 @endguest
 
                             </li>
